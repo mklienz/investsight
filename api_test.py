@@ -19,3 +19,13 @@ auth = HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET)
 client = BackendApplicationClient(client_id=CLIENT_ID)
 oauth = OAuth2Session(client=client)
 token = oauth.fetch_token(token_url="https://api.sharesight.com/oauth2/token", auth=auth)
+
+# Detect portfolio id
+
+# Get list of existing trades for given portfolio
+
+# For each trade in new trades, compare and see if it already exists in portfolio
+# If already exists, don't keep the trade
+# If doesn't already exist, keep the trade
+
+# For remaining trades, push to the account
