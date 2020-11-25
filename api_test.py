@@ -21,8 +21,14 @@ oauth = OAuth2Session(client=client)
 token = oauth.fetch_token(token_url="https://api.sharesight.com/oauth2/token", auth=auth)
 
 # Detect portfolio id
+port_resp = oauth.get("https://api.sharesight.com/api/v2/portfolios.json")
+port_resp.raise_for_status()
+portfolio_id = port_resp.json()["portfolios"][0]["id"]
 
 # Get list of existing trades for given portfolio
+trades_resp = oauth.get(f"https://api.sharesight.com/api/v2/portfolios/{portfolio_id}/trades.json")
+trades_resp.raise_for_status()
+trades = trades_resp.json()["trades"]
 
 # For each trade in new trades, compare and see if it already exists in portfolio
 # If already exists, don't keep the trade
