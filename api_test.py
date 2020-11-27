@@ -35,3 +35,6 @@ trades = trades_resp.json()["trades"]
 # If doesn't already exist, keep the trade
 
 # For remaining trades, push to the account
+inst_resp = oauth.get("https://api.sharesight.com/api/v2/user_instruments.json")
+inst_resp.raise_for_status()
+instruments = {item["name"]: item["id"] for item in inst_resp.json()["instruments"]}
