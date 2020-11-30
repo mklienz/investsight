@@ -15,7 +15,9 @@ load_dotenv()
 
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-REDIRECT_URI = os.getenv("REDIRECT_URI")
+
+# Temp placeholder; replace with pdf route
+PDF_ROUTE = "./test.pdf"
 
 # Backend legacy method
 auth = HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET)
