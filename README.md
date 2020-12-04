@@ -9,9 +9,7 @@ CLIENT_ID=<your sharesight client id>
 CLIENT_SECRET=<your sharesight client secret>
 ```
 
-To run, install package dependencies with `pip install -r requirements.txt`. 
-
-Authentication details for Share
+To run, install package dependencies with `pip install -r requirements.txt` then run the `main.py` script.
 
 ## Assumptions
 

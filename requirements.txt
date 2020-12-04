@@ -1,4 +1,4 @@
 pdfplumber==0.5.24
 requests==2.25.0
-requests-ouathlib==1.3.0
+requests-oauthlib==1.3.0
 python-dotenv==0.15.0

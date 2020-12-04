@@ -17,7 +17,7 @@ CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 # Temp placeholder; replace with pdf route
-PDF_ROUTE = "./test.pdf"
+PDF_ROUTE = "./invest_report.pdf"
 
 # Backend legacy method
 auth = HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET)
@@ -62,7 +62,7 @@ TRADE_PARAMS = [
 all_lines = []
 new_trades = []
 
-with pdfplumber.open("./test2.pdf") as pdf:
+with pdfplumber.open(PDF_ROUTE) as pdf:
     for page in pdf.pages:
         page_lines = page.extract_text().split("\n")
         KEEP_PAGE = KEEP_PAGE or ("Transactions" in page_lines)
