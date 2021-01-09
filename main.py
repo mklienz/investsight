@@ -10,6 +10,8 @@ from requests_oauthlib import OAuth2Session
 import os
 from dotenv import load_dotenv
 
+import sys
+
 # Load environmental variables (for secrets)
 load_dotenv()
 
@@ -17,7 +19,11 @@ CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 
 # Temp placeholder; replace with pdf route
-PDF_ROUTE = "./invest_report.pdf"
+if (len(sys.argv) != 2):
+    print('Usage: python main.py pdf_file_route')
+    sys.exit(1)
+else:
+    PDF_ROUTE = sys.argv[1]
 
 # Backend legacy method
 auth = HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET)
